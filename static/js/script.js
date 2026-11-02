@@ -58,3 +58,32 @@ $(document).ready(function() {
 }); 
 // jquery end
 
+
+function confirmRemove(event, element) {
+    event.preventDefault();
+
+    Swal.fire({
+        title: 'Are you sure?',
+        text: 'You want to remove this product from your cart?',
+        icon: 'warning',
+
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+
+        confirmButtonText: 'Yes, Remove it!',
+        cancelButtonText: 'No, Keep it',
+
+        reverseButtons: true
+    }).then((result) => {
+
+        if (result.isConfirmed) {
+            window.location.href = element.href;
+        }
+
+    });
+
+    return false;
+}
+
+

@@ -10157,5 +10157,30 @@ h3 {
 
 /*# sourceMappingURL=bootstrap.css.map */
 
+.no-results-page {
+    min-height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
 
+.no-results-image {
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.no-results-page h2 {
+    margin-top: 20px;
+}
+
+.no-results-page p {
+    margin: 10px 0 20px;
+}
 

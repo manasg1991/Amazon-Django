@@ -6,4 +6,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('AmazonApp.urls')),
     path('store/',include('Store.urls')),
+    path('cart/',include('Cart.urls')),
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
