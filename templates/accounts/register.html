@@ -1,0 +1,115 @@
+{% extends 'amazon/header.html' %}
+
+
+{% block title %} Register {% endblock %}
+{% block form-context %}
+<section class="section-content padding-y">
+
+<!-- ============================ COMPONENT REGISTER   ================================= -->
+	<section class="section-content padding-y">
+        
+    <div class="container">
+        
+
+        <div class="card mx-auto shadow-lg border-0"
+             style="max-width: 550px; border-radius: 15px;">
+
+            <div class="card-body p-4 p-md-5">
+
+                
+
+                <div class="text-center mb-4">
+                                  <h3 class="fw-bold text-dark">Create Account</h3>
+
+                       {% include 'amazon/alerts.html' %}
+
+                        <p class="text-muted">
+                         Join us and start shopping today!
+                        </p>
+                </div>
+                
+
+                <form action="{% url 'register' %}" method="POST">
+                    {% csrf_token %}
+
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            {{ form.non_field_errors }}
+                        </div>
+                    {% endif %}
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-semibold">First Name</label>
+                            {{ form.first_name }}
+                            {{ form.first_name.errors }}
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-semibold">Last Name</label>
+                            {{ form.last_name }}
+                            {{ form.last_name.errors }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-semibold">Email Address</label>
+                            {{ form.email }}
+                            {{ form.email.errors }}
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-semibold">Phone Number</label>
+                            {{ form.phone_number }}
+                            {{ form.phone_number.errors }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-semibold">Password</label>
+                            {{ form.password }}
+                            {{ form.password.errors }}
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-semibold">Confirm Password</label>
+                            {{ form.confirm_password }}
+                            {{ form.confirm_password.errors }}
+                        </div>
+                    </div>
+
+                    <div class="d-grid mt-6 text-center">
+                        <button type="submit"
+                                class="btn btn-primary btn-lg fw-semibold w-100">
+                           Register
+                        </button>
+                    </div>                  
+
+                </form>
+                
+
+                <hr class="my-4">
+
+                <p class="text-center mb-0">
+                    Already have an account?
+                    <a href="{% url 'login' %}"
+                       class="text-primary fw-semibold text-decoration-none">
+                        Sign In
+                    </a>
+                </p>
+
+            </div>
+        </div>
+        
+
+    </div>
+</section>
+
+<section class="section-content padding-y">
+
+<!-- ============================ COMPONENT REGISTER   ================================= -->
+	
+{% endblock %}
+{% include 'amazon/footer.html' %}

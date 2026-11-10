@@ -10184,3 +10184,20 @@ h3 {
     margin: 10px 0 20px;
 }
 
+.register-toast-container {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100%;
+    margin: 15px auto;
+    z-index: 10;
+}
+
+.register-toast-container .alert {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 8px;
+    padding: 12px 16px;
+}

@@ -1,0 +1,14 @@
+{% if messages %}
+<div class="register-toast-container">
+    {% for message in messages %}
+        <div class="alert
+            {% if message.tags == 'success' %}alert-success
+            {% elif message.tags == 'error' %}alert-danger
+            {% else %}alert-info{% endif %}
+            shadow-sm"
+            role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+</div>
+{% endif %}

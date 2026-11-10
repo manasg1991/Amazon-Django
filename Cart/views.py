@@ -84,6 +84,10 @@ def remove_cart_item(request,product_id,cart_item_id):
 
 def cart_detail(request,total=0,quantity=0,cart_items=None):
     try:
+        
+        tax = 0
+        grand_total = 0
+        total = 0
         cart=Cart.objects.get(cart_id= _cart_id(request))
         cart_items = CartItem.objects.filter(cart=cart,active=True)
         for cart_item in cart_items:
