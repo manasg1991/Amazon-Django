@@ -171,11 +171,12 @@ $(document).ready(function() {
 							<a href="{% url 'logout' %}"> Logout <i class="fa fa-power-off"></i></a>
 						</div>
 					</div>
+					{% endif %}
 					<a href="{% url 'cart_detail' %}" class="widget-header pl-3 ml-3">
 						<div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
 						<span class="badge badge-pill badge-danger notify">{{ cart_counter }}</span>
 					</a>
-					{% endif %}
+					
 				</div> <!-- widgets-wrap.// -->
 			</div> <!-- col.// -->
 </div> <!-- row.// -->
